@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="fragments/head_fragment :: head"></div>
+<body>
+<div th:replace="fragments/header_fragment :: header"></div>
+<section class="section-login">
+    <div class="container">
+        <form th:action="@{/login}" class="form" method="post">
+            <span>Вход</span>
+            <input type="text" class="form-input" required placeholder="Логин">
+            <input type="password" class="form-input" required placeholder="Пароль">
+            <input type="submit" class="header-button form-button" value="Войти">
+        </form>
+    </div>
+</section>
+</body>
+</html>

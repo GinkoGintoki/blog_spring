@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="fragments/head_fragment :: head"></div>
+<body>
+<div th:replace="fragments/header_fragment :: header"></div>
+<div class="profile" th:if="${#authentication!=null}">
+    <div>First Name : <span th:text="${user.getFirstName()}"></span></div>
+    <div>Second Name : <span th:text="${user.getLastName()}"></span></div>
+    <div>Login : <span th:text="${user.getLogin()}"></span></div>
+    <div>Register Date : <span th:text="${user.getRegisterDate()}"></span></div>
+</div>
+</body>
+</html>

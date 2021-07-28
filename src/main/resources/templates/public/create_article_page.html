@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="fragments/head_fragment :: head"></div>
+<body>
+<div th:replace="fragments/header_fragment :: header"></div>
+
+<div class="create-article">
+    <div class="container">
+        <form th:action="@{/create_article}" name="create_article_page" method="post" class="form form-create-article">
+            <input type="text" required placeholder="Тема статьи" name="headline" class="form-create-article-input">
+            <select name="category" required class="form-create-article-input">
+                <option th:value="${category.getId()}" th:each="category: ${categoryModel}">
+                    <span th:text="${category.getName()}"></span></option>
+            </select>
+            <textarea required placeholder="Текст" name="content"
+                      class="form-create-article-input form-article-content"></textarea>
+            <input type="submit" value="Отправить" class="header-button form-create-article-button">
+        </form>
+    </div>
+</div>
+</body>
+</html>

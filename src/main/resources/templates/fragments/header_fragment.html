@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<header th:fragment="header" class="header" id="header">
+    <div class="container">
+        <nav class="header-nav-menu">
+            <a th:href="@{/}" class="header-logo-link"><img src="/img/logo.jpg" alt="" class="logo"></a>
+            <div class="header-nav-menu-links">
+                <a th:href="@{/articles/best}" class="header-nav-menu-link">Лучшие статьи</a>
+                <a th:href="@{/articles/ongoing}" class="header-nav-menu-link">По онгоингам</a>
+                <a th:href="@{/articles/manga}" class="header-nav-menu-link">По мангам</a>
+                <a th:href="@{/articles/movie}" class="header-nav-menu-link">По фильмам</a>
+                <a th:href="@{/create_article}" class="header-nav-menu-link">Написать статью</a>
+            </div>
+        </nav>
+
+        <nav class="header-nav-reg">
+            <form th:action="@{articles/search}" method="GET" class="header-nav-reg-item">
+                <input type="text" placeholder="Поиск..." name="header-search" class="header-search">
+            </form>
+            <a th:href="@{/login}" th:if="${#authentication.getName()=='anonymousUser'}" class="header-nav-reg-item header-button login">Войти</a>
+            <a th:href="@{/registration}" th:if="${#authentication.getName()=='anonymousUser'}" class="header-nav-reg-item header-button sign-up">Регистрация</a>
+            <a th:href="@{/profile}" th:if="${#authentication.getName()!='anonymousUser'}" class="header-nav-reg-item header-button">Profile</a>
+            <a th:href="@{/logout}" th:if="${#authentication.getName()!='anonymousUser'}" class="header-nav-reg-item header-button">Log out</a>
+        </nav>
+    </div>
+</header>
+</body>
+</html>

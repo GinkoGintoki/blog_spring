@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<div th:fragment="registration" class="registration">
+    <div class="container">
+        <form th:action="@{/registration}" name="registration_page" method="post" class="form">
+            <span>Регистрация</span>
+            <input type="text" required placeholder="First name" name="firstName" class="form-input">
+            <input type="text" required placeholder="Last name" name="lastName" class="form-input">
+            <input type="text" required placeholder="Login" name="login" class="form-input">
+            <input type="password" required placeholder="Password" name="password" class="form-input">
+            <input type="submit" value="Зарегестрироваться" class="header-button form-button">
+        </form>
+    </div>
+</div>
+</body>
+</html>
