@@ -1,5 +1,6 @@
 package ginko.blog.entity;
 
+import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Setter
+@Getter
 public class Article {
 
     @Id
@@ -25,6 +27,9 @@ public class Article {
 
     @OneToMany(mappedBy = "article")
     private List<Rate> rates;
+
+    @OneToMany(mappedBy = "article")
+    private List<Comment> comments;
 
     @Column(name = "is_published")
     private Boolean isPublished;

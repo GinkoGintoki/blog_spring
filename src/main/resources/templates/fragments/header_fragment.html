@@ -20,8 +20,8 @@
             </form>
             <a th:href="@{/login}" th:if="${#authentication.getName()=='anonymousUser'}" class="header-nav-reg-item header-button login">Войти</a>
             <a th:href="@{/registration}" th:if="${#authentication.getName()=='anonymousUser'}" class="header-nav-reg-item header-button sign-up">Регистрация</a>
-            <a th:href="@{/profile}" th:if="${#authentication.getName()!='anonymousUser'}" class="header-nav-reg-item header-button">Profile</a>
-            <a th:href="@{/logout}" th:if="${#authentication.getName()!='anonymousUser'}" class="header-nav-reg-item header-button">Log out</a>
+            <a th:href="@{/profile}" th:if="${#authentication.getName()!='anonymousUser'}" class="header-nav-reg-item header-button profile-button">Profile</a>
+            <a th:href="@{/logout}" th:if="${#authentication.getName()!='anonymousUser'}" class="header-nav-reg-item header-button logout-button">Log out</a>
         </nav>
     </div>
 </header>

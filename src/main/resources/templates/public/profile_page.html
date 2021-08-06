@@ -7,7 +7,10 @@
     <div>First Name : <span th:text="${user.getFirstName()}"></span></div>
     <div>Second Name : <span th:text="${user.getLastName()}"></span></div>
     <div>Login : <span th:text="${user.getLogin()}"></span></div>
-    <div>Register Date : <span th:text="${user.getRegisterDate()}"></span></div>
+    <div>Register Date : <span th:text="${#temporals.format(user.getRegisterDate(), 'd MMMM yyyy')}"></span></div>
+    <div>Articles : <span class="profile-articles" th:each="article : ${articles}">
+        <a th:href="@{/article/{id}(id = ${article.getId()})}" th:text="${article.getHeadline()}"></a>
+    </span></div>
 </div>
 </body>
 </html>

@@ -3,7 +3,6 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
-    color: white;
 }
 
 a {
@@ -15,6 +14,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 16px;
+    color: #212529;
 }
 
 .container {
@@ -70,6 +70,7 @@ body {
 
 .header-nav-menu-link {
     padding: 8px;
+    color: #ffffff;
 }
 
 
@@ -79,6 +80,14 @@ body {
 
 .header-nav-reg-item:first-child {
     align-self: center;
+}
+
+.profile-button {
+    color: #ffffff;
+}
+
+.logout-button {
+    color: #ffc107;
 }
 
 .header-search {
@@ -233,7 +242,6 @@ body {
 }
 
 
-
 .form-input {
     display: block;
     width: 100%;
@@ -278,9 +286,116 @@ body {
 }
 
 .profile > div {
+    position: relative;
     color: #4574a3;
+}
+
+.profile > div:not(:first-child) {
+    margin-top: 5px;
 }
 
 .profile > div > span {
     color: #212529;
+}
+
+.profile > div > span > a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #212529;
+    transition: .3s;
+}
+
+.profile > div > span > a:hover {
+    text-decoration: underline;
+    color: #ffc107;
+}
+
+.profile-articles:not(:first-child) {
+    display: block;
+    margin-left: 67px;
+    margin-top: 2px;
+}
+
+.frame {
+    width: 970px;
+    padding: 15px;
+    margin: 15px auto 0;
+    border: 1px solid #212529;
+}
+
+.article-content > div {
+    color: #212529;
+}
+
+.article-content > div:not(:first-child) {
+    margin-top: 5px;
+}
+
+.article-comment-content {
+    width: 100%;
+    height: 100px;
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid #212529;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    overflow: auto;
+    resize: none;
+}
+
+.article-comment-button {
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+    padding: 8px 12px;
+    background-color: #212529;
+    border-color: white;
+}
+
+.article-comment-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article-comments-list > div {
+    color: #212529;
+    font-size: 16px;
+}
+
+.article-comments-list > div:not(:last-child) {
+    margin-top: 5px;
+}
+
+.article-comments-list > div:last-child {
+    font-size: 10px;
+}
+
+.article-comments-list:not(:first-child) {
+    margin-top: 10px;
+}
+
+.article-comments-span {
+    display: block;
+    color: #212529;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.article-rate-button {
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+    padding: 8px 12px;
+    background-color: #212529;
+    border-color: white;
+}
+
+.rate-select {
+    height: 25px;
 }

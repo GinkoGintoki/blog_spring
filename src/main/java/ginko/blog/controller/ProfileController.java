@@ -1,6 +1,7 @@
 package ginko.blog.controller;
 
 import ginko.blog.entity.User;
+import ginko.blog.repository.ArticleRepository;
 import ginko.blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -19,13 +20,17 @@ public class ProfileController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private ArticleRepository articleRepository;
+
     @GetMapping
     public String showProfile(Authentication authentication, Model model) {
         if (authentication != null) {
             User user = userRepository.getByLogin(authentication.getName());
             model.addAttribute("user", user);
             DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG);
-            model.addAttribute("formatter",dateTimeFormatter);
+            model.addAttribute("formatter", dateTimeFormatter);
+            model.addAttribute("articles", articleRepository.getArticlesByUser(user));
             return "public/profile_page";
         }
 
